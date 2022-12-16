@@ -21,8 +21,8 @@ class multiHeadAttention(nn.Module):
 
         #Apply initial linear transform to all heads
         V = self.v_heads(V)
-        Q = self.v_heads(Q)
-        K = self.v_heads(K)
+        Q = self.q_heads(Q)
+        K = self.k_heads(K)
 
         #Reshape for SDPA layers (need to switch heads and batch dims)
         v_s = V.shape
